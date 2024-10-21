@@ -5,7 +5,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     const password = document.getElementById('password').value;
 
     // API-Aufruf an das Backend zur Anmeldung
-    fetch('http://localhost:8080/api/login', {
+    fetch('http://localhost:8080/api/signup', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -29,6 +29,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     // Speichern des Benutzernamens im localStorage
     localStorage.setItem('username', data.username);
 	console.log('Username gespeichert:', localStorage.getItem('username'));
+    localStorage.setIte('token', data.token);
     // Weiterleitung zur Lernplattform-Seite
     window.location.href = 'index.html'; // Ändere den Dateinamen entsprechend deiner Struktur
 })
